@@ -1,0 +1,180 @@
+/*
+	Audio Folder Player
+	by Freakk
+	ffr3akk@gmail.com
+	www.freakk.net
+*/
+
+#player{
+	width: 250px;
+	height: 112px;
+	background: #282d30;
+	border: 1px solid #1262A3;
+	text-align:center;
+	padding:10px;
+	/* BORDER */
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #686868;
+	box-shadow: 0 0 2px 2px #0f1012;
+}
+#progressbar_container{
+	width:252px;
+	height:4px;
+	border: 1px inset #686868 ;
+	cursor:pointer;
+	margin-bottom: 10px;
+	background: #000002;
+	overflow:hidden;
+	position: relative;
+}
+#progressbar{
+	position: absolute;
+	height:4px;
+	top:0;
+	left:0;
+	background-color: #8FC1EB;
+	/* width:252px; */
+	box-shadow: 0 0 2px 2px #8FC1EB;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	z-index=10;
+}
+#progressbar_buffer{
+	position: absolute;
+	height:4px;
+	top:0;
+	left:0;
+	background-color: #405566;
+	/* width:252px; */
+	/* box-shadow: 0 0 2px 2px #8FC1EB; */
+	/* border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px; */
+	z-index=9;
+}
+#controls{
+	width:252px;
+	min-width: 252px;
+	height:34px;
+	padding-top:2px;
+	/* text-align: center; */
+	/* padding-left: 16px; */
+	/* background-color: black; */
+	overflow: hidden;
+	/* evenly spaced buttons*/
+	 text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+.ctrl_btn{
+	width: 36px;
+	height: 24px;
+	padding-top: 5px;
+	text-align: center;
+	/* float:left;
+	margin: 2px; */
+	display: inline-block;
+    *display: inline;
+	overflow: hidden;
+	
+	/* BUTTON BACKGROUND */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #4f4f4f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#4f4f4f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#4f4f4f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#4f4f4f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#4f4f4f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%,#4f4f4f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#4f4f4f',GradientType=0 ); /* IE6-9 */
+	
+	/* BORDER */
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #686868;
+	box-shadow: 0 0 1px 1px #0f1012;
+	
+	cursor:pointer;
+	
+}
+.ctrl_btn i{
+	color: #000000;
+	opacity: 0.6;
+	font-size: 14px;
+}
+
+#display{
+	width:252px;
+	height: 50px;
+	margin-bottom: 8px;
+	border: 1px inset #686868 ;
+	background: #08090b;
+	box-shadow:inset 0 0 10px #000000;
+	overflow: hidden;
+}
+.display_text{
+	color: #a2ccd8;
+	/* opacity: 0.7; */
+}
+#timer{
+	float:left;
+	height:42px;
+	width:82px;
+	padding: 0 4px;
+	font-size:38px;
+	text-shadow: 0 0 4px #a2ccd8;
+	/* background: rgba(255,255,255,0.6); */
+}
+
+#title{
+	width:154px;
+	height:14px;
+	padding: 4px;
+	overflow: hidden;
+	float:left;
+	font-size: 12px;
+	text-align:center;
+	text-shadow: 0 0 1px #a2ccd8;
+	/* background: rgba(255,255,255,0.6); */
+}
+#vol_container{
+	width:154px;
+	height:14px;
+	padding: 4px;
+	overflow: hidden;
+	float:left;
+}
+#vol_bar_container{
+	float: left;
+	width:120px;
+	height:14px;
+	background: rgba(0,0,0,0.4);
+}
+#vol_bar{
+	float: left;
+	width:90%;
+	height:14px;
+	background: #a2ccd8;
+	box-shadow: 0 0 3px #a2ccd8;
+	cursor: pointer;
+}
+.vol_icon{
+	width: 20px;
+	height: 20px;
+	/* padding-top: 5px; */
+	font-size: 14px;
+	text-align: center;
+	cursor:pointer;
+	float:left;
+}
+#vol_off{
+	display:none;
+}
+
