@@ -10,20 +10,19 @@
 <body>     
 
 <div id="player">
-	<div id="playlist" value="3">
-		<?php
-			/* READ MP3 FILES FROM FOLDER */
-			$songs = array();
-			$i=0;
-			foreach (glob("songs/*.mp3") as $filename) {
-			$i++;
-			$filename_cut = substr ( $filename , strlen("songs/"));
+	<?php
+		/* READ MP3 FILES FROM FOLDER */
+		$songs = "";
+		$i=0;
+		foreach (glob("songs/*.mp3") as $filename) {
+		$i++;
+		$filename_cut = substr ( $filename , strlen("songs/"));
 			$noext = substr ( $filename_cut , 0, -4);
-				echo('
-				<audio id="song'.$i.'" src="songs/'.$filename_cut.'" name="'.$noext.'" type="audio/mpeg"></audio>
-				');
-			}
-		?>
+			$songs = $songs .'<audio id="song'.$i.'" src="songs/'.$filename_cut.'" name="'.$noext.'" type="audio/mpeg"></audio>';
+		}
+	?>
+	<div id="playlist" value="<?php echo $i?>">
+	<?php echo $songs?>
 	</div> <!-- /#playlist -->
 	<div id="display">
 		<div id="timer" class="display_text">00:00</div>
