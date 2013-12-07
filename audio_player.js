@@ -60,7 +60,11 @@ var prev = function(){
    $('#pause').show();
    $('#title').html($('#song'+(index+1)).attr('name'));
 };
-
+var playSong = function(n){
+	stop();
+	index = n;
+	play();
+};
 /* AUTOPLAY */
 if( $('#player').attr('data-autoplay')=="1") play();
 
@@ -80,7 +84,6 @@ $('#timer').click(function() {
 	if(countdown) countdown=false;
 	else countdown=true;
 });
-
 /* BIND PROCESS */
 $("audio").bind('timeupdate', function(){
 	duration = $('#playlist audio').get(index).duration;
@@ -142,11 +145,12 @@ $('#vol_bar_container').click(function(e) {
 	else {vol = pos/100 };
 });
 
-/* $(document).keypress(function(e) {
-    if(e.which == 13) {
-        alert("loaded "+parseInt(loaded)+"\nof "+parseInt(duration));
-    }
-}); */
-
+/* PLAYLIST */
+$('#playlist_display_btn').click(function() { 
+	$('#playlist_container').fadeToggle('fast');
+});
+$('.song_name').click(function() { 
+	playSong($(this).attr('value')-1); 
+});
 });
 	

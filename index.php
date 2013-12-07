@@ -9,22 +9,24 @@
 
 <body>     
 
-<div id="player">
+<div id="player" class="window">
 	<?php
 		/* READ MP3 FILES FROM FOLDER */
 		$songs = "";
+		$song_names = array();
 		$i=0;
 		foreach (glob("songs/*.mp3") as $filename) {
 		$i++;
 		$filename_cut = substr ( $filename , strlen("songs/"));
 			$noext = substr ( $filename_cut , 0, -4);
+			$song_names[$i-1] = $noext;
 			$songs = $songs .'<audio id="song'.$i.'" src="songs/'.$filename_cut.'" name="'.$noext.'" type="audio/mpeg"></audio>';
 		}
 	?>
 	<div id="playlist" value="<?php echo $i?>">
 	<?php echo $songs?>
 	</div> <!-- /#playlist -->
-	<div id="display">
+	<div id="display" class="display">
 		<div id="timer" class="display_text">00:00</div>
 		<div id="title" class="display_text">- - - - - - - - - -</div>
 		<div id="vol_container" class="display_text">
@@ -33,7 +35,9 @@
 			<div id="vol_bar_container">
 				<div id="vol_bar"></div>
 			</div>
+			<div id="playlist_display_btn">PL</div><!-- /#playlist_display_btn -->
 		</div><!-- /#vol_container -->
+		
 	</div> <!-- /#display -->
 	<div id	="progressbar_container"><div id="progressbar_buffer"></div><div id="progressbar"></div></div>
 	<div id="controls">
@@ -47,6 +51,26 @@
 		<span class="stretch"></span>
 	</div><!-- /#controls --> 
 </div> <!-- /#player -->
+
+<div id="playlist_container" class="window">
+<div id="playlist_display" class="display">
+	<?php
+		$j=0;
+		$row_color[0] = "odd";
+		$row_color[1] = "even";
+		foreach ($song_names as $name) {
+			$j++;
+			
+			echo('
+				<div class="song_name '.$row_color[$j%2].'" value="'.$j.'">'.carryZero($j).' : '.$name.'</div>
+			');
+		}
+		function carryZero($n){
+			if($n<10) return '0'.$n;
+			else return $n;
+		}
+	?>
+</div><!-- /#playlist_display -->
 
 <script language="javascript" type="text/javascript" src="audio_player.js"></script>	 
 </body>    

@@ -4,13 +4,9 @@
 	ffr3akk@gmail.com
 	www.freakk.net
 */
-
-#player{
-	width: 250px;
-	height: 112px;
+.window{
 	background: #282d30;
 	border: 1px solid #1262A3;
-	text-align:center;
 	padding:10px;
 	/* BORDER */
 	-webkit-border-radius: 2px;
@@ -18,6 +14,12 @@
 	border-radius: 2px;
 	border: 1px solid #686868;
 	box-shadow: 0 0 2px 2px #0f1012;
+	width: 250px;
+}
+#player{
+	
+	height: 112px;
+	text-align:center;
 }
 #progressbar_container{
 	width:252px;
@@ -109,14 +111,15 @@
 	opacity: 0.6;
 	font-size: 14px;
 }
-
+.display{
+	border: 1px inset #686868 ;
+	background: #08090b;
+	box-shadow:inset 0 0 10px #000000;
+}
 #display{
 	width:252px;
 	height: 50px;
 	margin-bottom: 8px;
-	border: 1px inset #686868 ;
-	background: #08090b;
-	box-shadow:inset 0 0 10px #000000;
 	overflow: hidden;
 }
 .display_text{
@@ -130,13 +133,14 @@
 	padding: 0 4px;
 	font-size:38px;
 	text-shadow: 0 0 4px #a2ccd8;
+	cursor: pointer;
 	/* background: rgba(255,255,255,0.6); */
 }
 
 #title{
 	width:154px;
 	height:14px;
-	padding: 4px;
+	margin: 4px;
 	overflow: hidden;
 	float:left;
 	font-size: 12px;
@@ -150,12 +154,15 @@
 	padding: 4px;
 	overflow: hidden;
 	float:left;
+	
 }
 #vol_bar_container{
 	float: left;
-	width:120px;
+	width:100px;
 	height:14px;
-	background: rgba(0,0,0,0.4);
+	/* background: rgba(0,0,0,0.4); */
+	border: 1px solid #a2ccd8;
+	box-shadow: 0 0 3px #a2ccd8;
 }
 #vol_bar{
 	float: left;
@@ -173,8 +180,52 @@
 	text-align: center;
 	cursor:pointer;
 	float:left;
+	text-shadow: 0 0 1px #a2ccd8;
 }
 #vol_off{
 	display:none;
 }
 
+#playlist_display_btn{
+	display: table-cell;
+	float: left;
+	width:14px;
+	height:12px;
+	padding-top: 2px;
+	border: 1px solid #a2ccd8;
+	border-radius: 2px;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 8px;
+	margin-left: 8px;
+	text-shadow: 0 0 1px #a2ccd8;
+	box-shadow: 0 0 3px #a2ccd8;
+	cursor: pointer;
+}
+
+#playlist_container{
+	margin-top:2px;
+}
+#playlist_display{
+	height: 90px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.song_name{
+	width:100%;
+	overflow:hidden;
+	height:14px;
+	padding: 4px;
+	font-size: 12px;
+	text-align:left;
+	text-shadow: 0 0 1px #a2ccd8;
+	color: #a2ccd8;
+	cursor: pointer;
+}
+
+.odd{
+ background : #1A1A1A;
+}
+.even{
+ /* background : rgba(0,0,0,0.5); */
+}
