@@ -8,8 +8,12 @@
 </head>     
 
 <body>     
-
-<div id="player" class="window">
+<!--
+	Audio Folder Player
+	by Freakk
+	ffr3akk@gmail.com
+-->
+<div id="player" class="window" data-autoplay="0">
 	<?php
 		/* READ MP3 FILES FROM FOLDER */
 		$songs = "";
